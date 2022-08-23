@@ -14,3 +14,6 @@ Had to not only create the app but also verify it as an admin of the page, follo
 
 I also needed to request for access. Thought that would require some manual intervention and review by Linked In. But nope, it's just a button click. Can select from: learning, authenticating and marketing APIs without any questions asked.
 
+Explored public Postman workspace of LinkedIn and figured I would port the examples to be version controlled, personalized, specialized and secure: https://www.postman.com/linkedin-developer-apis/workspace/linkedin-marketing-solutions/folder/16069442-1e1c3b59-6dc9-4b47-942d-9a36ac9cda6b?ctx=documentation
+
+Next up tried getting the first request working. I managed to get a LinkedIn response from my request for auth token - it responded with invalid token. Unfortunately, all that wrapped in raw HTML. Restful Client VS Code extension currently does not support preview of responses in raw HTML, therefore, it is not really a convenient way of authorising. Will have to do it the classic way - using Postman.
