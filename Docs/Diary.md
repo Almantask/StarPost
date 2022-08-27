@@ -73,3 +73,8 @@ Tried post as-is from the official docs and it was a bad request:
 ```
 
 Realised the endpoint is used only for ads. The endpoint I should use is `/ugcPosts`. Managed to do a successful delete and create.
+
+Supplemented a Postman request to create a post with a post-script (Tests tab) to set the id of a created post in environment variables. This way, we can just call a delete afterwards.
+
+Read the docs more attentively. UGC stands for user generated content.
+
