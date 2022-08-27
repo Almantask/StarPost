@@ -1,7 +1,0 @@
-
-GET https://api.linkedin.com/oauth/v2/authorization?response_type=code&client_id=%7B%7BCLIENT-ID%7D%7D&scope=r_organization_social%2Crw_organization_admin%2Cw_organization_social%2Crw_ads%20r_ads&redirect_uri=https%3A%2F%2Foauth.pstmn.io%2Fv1%2Fbrowser-callback
-
-accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
-accept-encoding: gzip, deflate, br
-accept-language: en-US,en;q=0.9
-user-agent: Restful HTTP client VS Code extension
