@@ -45,3 +45,31 @@ Waited 1h for the permission to be confirmed (no notification, it just happens).
 I'm in. All I had to do is to change the scopes to just what I need (the defaults were different): `w_member_social`. Doh!
 
 Now let's go back to docs to read what exactly I can do with the posts API.
+
+Trying to create a post. Needs author id. Got it using profile/me endpoint. Still getting resource not found. Resource not found means bad endpoint, not that my user id is not recognized. I was using `/rest/posts` when `/posts` was enough.
+
+Tried post as-is from the official docs and it was a bad request:
+
+```json
+{
+    "errorDetailType": "com.linkedin.common.error.BadRequest",
+    "code": "MISSING_REQUIRED_FIELD_FOR_DSC",
+    "message": "Field /adContext/dscAdAccount is required when the post is a Direct Sponsored Content, but missing in the request",
+    "errorDetails": {
+        "inputErrors": [
+            {
+                "description": "Field /adContext/dscAdAccount is required when the post is a Direct Sponsored Content, but missing in the request",
+                "input": {
+                    "inputPath": {
+                        "fieldPath": "/adContext/dscAdAccount"
+                    }
+                },
+                "code": "MISSING_REQUIRED_FIELD_FOR_DSC"
+            }
+        ]
+    },
+    "status": 400
+}
+```
+
+Realised the endpoint is used only for ads. The endpoint I should use is `/ugcPosts`. Managed to do a successful delete and create.
