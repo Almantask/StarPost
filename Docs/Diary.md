@@ -27,3 +27,21 @@ Went back to OAuth settings of my LinkedIn app. Set redirect URI - https://googl
 Tried again - vague error (literally, just that error in Postman console)
 
 Added another redirect link to my app - the one Postman provides by default. Getting a different error - unauthorised scope. Probaby my access request still hasn't been approved yet. Let's wait for tomorrow.
+
+## Day 4, 5, 6
+
+No notification
+
+## Day 7
+
+Maybe it works? Retried getting the token - fail.
+Googled the error:
+`unauthorized_scope_error`
+
+I discovered that if I want an access token - I will need "Sign In With LinkedIn" permission. Well duh... I am requesting a token through LinkedIn signup after all. Though it's a bit silly not to give the required permission and to put me (or any other developer) into an impossible state with just that one permission that I have requested initially (media).
+
+Waited 1h for the permission to be confirmed (no notification, it just happens). Tried again getting the token - same error.
+
+I'm in. All I had to do is to change the scopes to just what I need (the defaults were different): `w_member_social`. Doh!
+
+Now let's go back to docs to read what exactly I can do with the posts API.
