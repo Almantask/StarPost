@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Domain\StarPost.Domain.Posts\StarPost.Domain.Posts.csproj" />
+    <ProjectReference Include="..\..\Src\StarPost.Domain.Posts\StarPost.Domain.Posts.csproj" />
     <ProjectReference Include="..\StarPost.Tests.Common\StarPost.Tests.Common.csproj" />
   </ItemGroup>
 
