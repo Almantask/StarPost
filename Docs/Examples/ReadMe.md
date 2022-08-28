@@ -21,3 +21,4 @@ If everything is set, you should be redirected to a LinkedIn page to do authoris
 ### Create and Delete a Post
 
 There is a Postman collection *LinkedIn/Posts* under which you can create and delete a post.
+

@@ -80,6 +80,8 @@ Read the docs more attentively. UGC stands for user generated content.
 
 ## Day 8
 
+### Projects setup
+
 Started some code. It begins with writing defining solution structure. I prefer Onion Architecture, because it encourages modular design and decouples parts of a system.
 For now, the structure is `StarPost.`:
 
@@ -110,3 +112,29 @@ global using StarPost.Tests.Common.Logging;
 global using Moq;
 global using FluentAssertions;
 ``` 
+
+### LinkedIn integration
+
+### First reads
+
+Unfortunately, there are no NuGets that would still maintain LinkedIn latest versions. Even if there is - they are .NET.
+This means, that I will have to make my own LinkedInClient.
+
+Reading about the [authentication of LinkedIn](https://docs.microsoft.com/en-us/linkedin/shared/authentication/authentication?context=linkedin%2Fcontext&view=li-lms-2022-08) first. A few things to note:
+
+- Getting a code from OAuth is not enough - I must also validate the state returned to prevent CRF attack.
+- Code is valid for 30 minutes
+- Access token is valid for 60 days
+- Refresh token is valid for a year
+- Refresh token will need to go through use interaction, because programmable refreshes are available only for a small set of partners
+
+I won't care so much for refresh tokens yet.
+
+### First implementation - Access Token
+
+Installed RestSharp.
+
+Created configuration class.
+
+Started creating a client.
+
