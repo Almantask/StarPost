@@ -1,4 +1,4 @@
-﻿namespace StarPost.Tests.Common.Logging
+﻿namespace StarPost.Tests.Common.Assertions
 {
     public static class LoggerAssertions
     {

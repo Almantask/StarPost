@@ -7,6 +7,7 @@ using StarPost.LinkedIn.Client.Configuration;
 
 namespace StarPost.LinkedIn.Client
 {
+
     public class LinkedInClient
     {
         private readonly LinkedInConfiguration _configuration;
@@ -17,5 +18,15 @@ namespace StarPost.LinkedIn.Client
         }
 
 
+        public Task<GetAuthorizationCodeResponse> GetAuthorizationCode()
+        {
+            return Task.FromResult(new GetAuthorizationCodeResponse());
+        }
+    }
+
+    public class GetAuthorizationCodeResponse
+    {
+        public string Code { get; set; }
+        public string State { get; set; }
     }
 }

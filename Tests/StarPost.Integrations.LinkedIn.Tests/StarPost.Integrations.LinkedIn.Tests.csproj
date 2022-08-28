@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Src\StarPost.Integration.LinkedIn\StarPost.Integration.LinkedIn.csproj" />
+    <ProjectReference Include="..\..\Src\StarPost.LinkedIn.Client\StarPost.LinkedIn.Client.csproj" />
     <ProjectReference Include="..\StarPost.Tests.Common\StarPost.Tests.Common.csproj" />
   </ItemGroup>
 
