@@ -78,3 +78,35 @@ Supplemented a Postman request to create a post with a post-script (Tests tab) t
 
 Read the docs more attentively. UGC stands for user generated content.
 
+## Day 8
+
+Started some code. It begins with writing defining solution structure. I prefer Onion Architecture, because it encourages modular design and decouples parts of a system.
+For now, the structure is `StarPost.`:
+
+- `Domain.Posts` - defines a central logic handling place to which other integrations will map.
+- `Integration.LinkedIn` - LinkedIn specific things
+- `StarPost.Persistence` - database persistence
+
+What is missing here is a client project, but I haven't yet decided how I want to use the app as an MVP.
+
+Each project is then followed with a tests project. The only special thing about it - there is a common tests project `Tests.Common` which provides common test functions and includes all the testing helper libraries that I use:
+
+- `Autofixture`
+- `FluentAssertions`
+- `Moq`
+
+This time, I have added analysers for `Moq` and `FluentAssertions` in hope that they advice how to write better code.
+
+The first thing I added to common tests is `Dummy` class with two methods: `Any<T>()` and `AnyMany<T>()`. If you need a dummy value - it's very clear to generate it using those methods.
+
+`Foo(Any<int>())` - for example.
+
+I make use of the power of global usings in .NET 6 and each tests project has the following global usings file (`Usings.cs`):
+
+```cs
+global using static StarPost.Tests.Common.Fakes.Dummy;
+global using Xunit;
+global using StarPost.Tests.Common.Logging;
+global using Moq;
+global using FluentAssertions;
+``` 
